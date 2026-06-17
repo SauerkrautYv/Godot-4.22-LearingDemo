@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://b5omm2e7jg0gm"]
+
+[ext_resource type="Script" path="res://classes/StateMachine.gd" id="1_24x05"]
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_ern3d"]
+[ext_resource type="Script" path="res://classes/Hitbox.gd" id="2_a6erp"]
+[ext_resource type="Script" path="res://classes/Hurtbox.gd" id="3_whkme"]
+[ext_resource type="Script" path="res://classes/Stats.gd" id="5_2gdlh"]
+[ext_resource type="Texture2D" uid="uid://bnp0by31x2rvo" path="res://assets/state/stun2.png" id="6_7h135"]
+[ext_resource type="Texture2D" uid="uid://da3gfkq8atuko" path="res://assets/state/stun1.png" id="7_dk4kc"]
+[ext_resource type="Texture2D" uid="uid://betb4penv8rmm" path="res://assets/state/stun0.png" id="8_5auog"]
+[ext_resource type="Texture2D" uid="uid://b8quyh5pju4i4" path="res://assets/state/stun.png" id="9_wn3m4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cq2fy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7h135")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dk4kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5auog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wn3m4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_ern3d")
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Graphics"]
+
+[node name="Hitbox" type="Area2D" parent="Graphics"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("2_a6erp")
+
+[node name="Hurtbox" type="Area2D" parent="Graphics"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_whkme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_24x05")
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("5_2gdlh")
+
+[node name="StunIcon" type="AnimatedSprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.705882)
+position = Vector2(0, -34)
+sprite_frames = SubResource("SpriteFrames_cq2fy")
+autoplay = "default"

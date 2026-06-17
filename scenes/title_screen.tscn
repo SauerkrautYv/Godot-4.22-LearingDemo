@@ -1,0 +1,161 @@
+[gd_scene load_steps=15 format=3 uid="uid://byyf2ew4svrvj"]
+
+[ext_resource type="Theme" uid="uid://djgw6fgavogaf" path="res://UI/main_theme.tres" id="1_8oh7y"]
+[ext_resource type="FontFile" uid="uid://ddhjeqef5ksmp" path="res://assets/SmileySans-Oblique.otf" id="1_txolt"]
+[ext_resource type="Script" path="res://scenes/title_screen.gd" id="2_8a35a"]
+[ext_resource type="Texture2D" uid="uid://blac0lu6mj23t" path="res://assets/generic_char_v0.2/png/blue/char_blue_1.png" id="4_n0y5c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxt1s"]
+atlas = ExtResource("4_n0y5c")
+region = Rect2(0, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywspn"]
+atlas = ExtResource("4_n0y5c")
+region = Rect2(56, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmhah"]
+atlas = ExtResource("4_n0y5c")
+region = Rect2(112, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm7vx"]
+atlas = ExtResource("4_n0y5c")
+region = Rect2(168, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1dwq"]
+atlas = ExtResource("4_n0y5c")
+region = Rect2(224, 0, 56, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su4sv"]
+atlas = ExtResource("4_n0y5c")
+region = Rect2(280, 0, 56, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xt16d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxt1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywspn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmhah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm7vx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s1dwq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su4sv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_6el6g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 115)]
+}
+
+[sub_resource type="Animation" id="Animation_jeii5"]
+resource_name = "enter"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(0.732043, 1),
+"update": 0,
+"values": [Vector2(-72, 115), Vector2(0, 115)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j3ekx"]
+_data = {
+"RESET": SubResource("Animation_6el6g"),
+"enter": SubResource("Animation_jeii5")
+}
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8oh7y")
+script = ExtResource("2_8a35a")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 24.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.810859, 0.978309, 0.988783, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_txolt")
+theme_override_font_sizes/font_size = 40
+text = "勇者传说"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = 115.0
+offset_right = 72.0
+offset_bottom = 216.0
+grow_vertical = 0
+
+[node name="NewGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "新的游戏"
+
+[node name="LoadGame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "加载游戏"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "退出游戏"
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Graphics"]
+position = Vector2(199, 188)
+sprite_frames = SubResource("SpriteFrames_xt16d")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_j3ekx")
+}
+autoplay = "enter"
+
+[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

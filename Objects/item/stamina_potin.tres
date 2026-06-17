@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://b0dw1t1bt2gwn"]
+
+[ext_resource type="Script" path="res://Objects/item/effect/stamina_potion.gd" id="1_bqu1x"]
+[ext_resource type="Script" path="res://Objects/item/ResourceItemData.gd" id="1_kjw6e"]
+[ext_resource type="Texture2D" uid="uid://5v1xfv2xdxvq" path="res://assets/item/potin.png" id="2_8e8s4"]
+
+[sub_resource type="Resource" id="Resource_dnrej"]
+script = ExtResource("1_bqu1x")
+stamina_amount = 1.0
+sound_name = "use_potin"
+ues_description = ""
+
+[resource]
+script = ExtResource("1_kjw6e")
+name = "体力药水"
+description = "口渴时来一瓶"
+texture = ExtResource("2_8e8s4")
+effects = Array[Resource("res://Objects/item/effect/item_efffect.gd")]([SubResource("Resource_dnrej")])

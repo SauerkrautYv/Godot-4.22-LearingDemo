@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://22m4w0pklc5v"
+path="res://.godot/imported/26 14 BOSS fixing INITIAL.mp3-c16c901b0ab986dc71402f1afd560387.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/Infinity Crystal_ Awakening/26 14 BOSS fixing INITIAL.mp3"
+dest_files=["res://.godot/imported/26 14 BOSS fixing INITIAL.mp3-c16c901b0ab986dc71402f1afd560387.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

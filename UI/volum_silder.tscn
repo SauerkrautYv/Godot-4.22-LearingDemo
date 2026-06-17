@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1o0h6m508e0g"]
+
+[ext_resource type="Theme" uid="uid://djgw6fgavogaf" path="res://UI/main_theme.tres" id="1_iw22m"]
+[ext_resource type="Script" path="res://UI/volum_silder.gd" id="2_4qg8w"]
+
+[node name="VolumSilder" type="HSlider"]
+offset_right = 256.0
+offset_bottom = 16.0
+theme = ExtResource("1_iw22m")
+max_value = 1.0
+step = 0.01
+value = 0.5
+script = ExtResource("2_4qg8w")

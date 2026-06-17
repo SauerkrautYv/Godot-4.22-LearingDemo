@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bec4rljq2ialu"]
+
+[ext_resource type="Script" path="res://Objects/item/ResourceItemData.gd" id="1_sdwuh"]
+[ext_resource type="Texture2D" uid="uid://bedind56g6gve" path="res://assets/item/coin.png" id="2_d12v5"]
+
+[resource]
+script = ExtResource("1_sdwuh")
+name = "金币"
+description = "金光闪闪"
+texture = ExtResource("2_d12v5")
+effects = Array[Resource("res://Objects/item/effect/item_efffect.gd")]([])

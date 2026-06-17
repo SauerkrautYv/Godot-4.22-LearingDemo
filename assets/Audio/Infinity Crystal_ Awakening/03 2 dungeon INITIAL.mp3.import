@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dhhqybrch8lx3"
+path="res://.godot/imported/03 2 dungeon INITIAL.mp3-ed6e7f31c757c27c9bd632bff643171f.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/Infinity Crystal_ Awakening/03 2 dungeon INITIAL.mp3"
+dest_files=["res://.godot/imported/03 2 dungeon INITIAL.mp3-ed6e7f31c757c27c9bd632bff643171f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

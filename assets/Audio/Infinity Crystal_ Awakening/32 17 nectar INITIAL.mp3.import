@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwwe8t3wp5ik"
+path="res://.godot/imported/32 17 nectar INITIAL.mp3-1ee2a15703b4982e7e443c92f2c8951b.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/Infinity Crystal_ Awakening/32 17 nectar INITIAL.mp3"
+dest_files=["res://.godot/imported/32 17 nectar INITIAL.mp3-1ee2a15703b4982e7e443c92f2c8951b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

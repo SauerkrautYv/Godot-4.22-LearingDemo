@@ -1,0 +1,78 @@
+[gd_scene load_steps=15 format=3 uid="uid://dd47mxkm8m143"]
+
+[ext_resource type="AudioStream" uid="uid://bblyaaogvl33y" path="res://assets/Audio/Minifantasy_Dungeon_SFX/07_human_atk_sword_1.wav" id="1_4efxv"]
+[ext_resource type="Script" path="res://globals/sound_manager.gd" id="1_s82hi"]
+[ext_resource type="AudioStream" uid="uid://c5iqojlnsjc20" path="res://assets/Audio/Minifantasy_Dungeon_SFX/07_human_atk_sword_2.wav" id="2_0fnu4"]
+[ext_resource type="AudioStream" uid="uid://chnf8ku8g17ba" path="res://assets/Audio/Minifantasy_Dungeon_SFX/07_human_atk_sword_3.wav" id="3_pwn2y"]
+[ext_resource type="AudioStream" uid="uid://c30tt8t7vgbex" path="res://assets/Audio/Minifantasy_Dungeon_SFX/12_human_jump_3.wav" id="3_u6aih"]
+[ext_resource type="AudioStream" uid="uid://dro2xdr8vxw7y" path="res://assets/Audio/Minifantasy_Dungeon_SFX/22_orc_jump_1.wav" id="4_3rmm6"]
+[ext_resource type="AudioStream" uid="uid://ctdrtrhqd3fbm" path="res://assets/Audio/Minifantasy_Dungeon_SFX/13_human_jump_land_2.wav" id="5_xnhrg"]
+[ext_resource type="AudioStream" uid="uid://m4ifqnvljxi4" path="res://assets/Audio/kenney_impact-sounds/impactTin_medium_001.ogg" id="6_1oqm1"]
+[ext_resource type="AudioStream" uid="uid://8slyo4td27is" path="res://assets/Audio/kenney_impact-sounds/impactGeneric_light_000.ogg" id="7_2i2b8"]
+[ext_resource type="AudioStream" uid="uid://iyv8bajat68e" path="res://assets/Audio/Minifantasy_Dungeon_SFX/08_human_charge_1.wav" id="10_6mmxw"]
+[ext_resource type="AudioStream" uid="uid://dkd8xl4c1ohow" path="res://assets/Audio/kenney_impact-sounds/impactMining_000.ogg" id="11_gux3i"]
+[ext_resource type="AudioStream" uid="uid://75bgu2mtl2jg" path="res://assets/Audio/kenney_impact-sounds/footstep_concrete_003.ogg" id="12_r8c82"]
+[ext_resource type="AudioStream" uid="uid://bh033orruaqec" path="res://assets/Audio/kenney_impact-sounds/impactPlate_heavy_000.ogg" id="13_yopbl"]
+[ext_resource type="AudioStream" uid="uid://bicfjt2dlqs3c" path="res://assets/item/potin.mp3" id="14_ye61s"]
+
+[node name="SoundManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_s82hi")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="attack1" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("1_4efxv")
+bus = &"SFX"
+
+[node name="jump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("3_u6aih")
+bus = &"SFX"
+
+[node name="sliding_start" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_3rmm6")
+bus = &"SFX"
+
+[node name="landing" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("5_xnhrg")
+bus = &"SFX"
+
+[node name="attack2" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("2_0fnu4")
+bus = &"SFX"
+
+[node name="attack3" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("3_pwn2y")
+bus = &"SFX"
+
+[node name="UIFocus" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_1oqm1")
+bus = &"SFX"
+
+[node name="UIPress" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_2i2b8")
+bus = &"SFX"
+
+[node name="spells" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("10_6mmxw")
+bus = &"SFX"
+
+[node name="pro_block" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("11_gux3i")
+volume_db = 6.0
+bus = &"SFX"
+
+[node name="block_start" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("12_r8c82")
+bus = &"SFX"
+
+[node name="block" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("13_yopbl")
+bus = &"SFX"
+
+[node name="use_potin" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("14_ye61s")
+bus = &"SFX"
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"

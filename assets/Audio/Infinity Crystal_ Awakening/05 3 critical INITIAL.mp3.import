@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://x7kcp0r5aysb"
+path="res://.godot/imported/05 3 critical INITIAL.mp3-4f4c5071eb4b83b523caafdb51a3110e.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/Infinity Crystal_ Awakening/05 3 critical INITIAL.mp3"
+dest_files=["res://.godot/imported/05 3 critical INITIAL.mp3-4f4c5071eb4b83b523caafdb51a3110e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://jtodfxrdvunl"]
+
+[ext_resource type="Script" path="res://UI/bag_screen.gd" id="1_7ck45"]
+[ext_resource type="Texture2D" uid="uid://b5slfp74jr7sy" path="res://assets/item/backpack.png" id="2_vtfok"]
+[ext_resource type="Script" path="res://UI/inventory/script/inventory_ui.gd" id="3_pt1mr"]
+[ext_resource type="Resource" uid="uid://c7tf2p8b3bwy1" path="res://UI/inventory/player_inventory.tres" id="4_p3hw6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sfp8b"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+texture = ExtResource("2_vtfok")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[node name="bag_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ck45")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.701961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "背包"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -48.0
+offset_right = -16.0
+offset_bottom = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "退出"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -20.0
+offset_right = 34.0
+offset_bottom = 6.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_sfp8b")
+
+[node name="BagGrid" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+columns = 3
+script = ExtResource("3_pt1mr")
+data = ExtResource("4_p3hw6")
+
+[connection signal="hidden" from="." to="." method="_on_hidden"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]

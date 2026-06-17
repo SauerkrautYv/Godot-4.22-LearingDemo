@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkcxq58suw777"
+path="res://.godot/imported/41 22 romance INITIAL.mp3-2b64357bff7bf45f7fba14cdce668069.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/Infinity Crystal_ Awakening/41 22 romance INITIAL.mp3"
+dest_files=["res://.godot/imported/41 22 romance INITIAL.mp3-2b64357bff7bf45f7fba14cdce668069.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

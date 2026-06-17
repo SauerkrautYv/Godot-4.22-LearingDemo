@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4vlc10142r2"
+path="res://.godot/imported/11 6 sunny LOOP.mp3-51b5816cfd9e4ce3ee366c92fe2eb806.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/Infinity Crystal_ Awakening/11 6 sunny LOOP.mp3"
+dest_files=["res://.godot/imported/11 6 sunny LOOP.mp3-51b5816cfd9e4ce3ee366c92fe2eb806.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

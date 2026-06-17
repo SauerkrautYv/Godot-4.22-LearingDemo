@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvfppb6tqcxos"
+path="res://.godot/imported/30 16 airship INITIAL.mp3-fe958f21b417ada12e14cd2ec27ca977.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/Infinity Crystal_ Awakening/30 16 airship INITIAL.mp3"
+dest_files=["res://.godot/imported/30 16 airship INITIAL.mp3-fe958f21b417ada12e14cd2ec27ca977.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

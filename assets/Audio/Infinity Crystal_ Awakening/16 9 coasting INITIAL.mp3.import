@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cm8okcuk23cop"
+path="res://.godot/imported/16 9 coasting INITIAL.mp3-d6a900e4567dd54fffc4d4a4c54c2ad7.mp3str"
+
+[deps]
+
+source_file="res://assets/Audio/Infinity Crystal_ Awakening/16 9 coasting INITIAL.mp3"
+dest_files=["res://.godot/imported/16 9 coasting INITIAL.mp3-d6a900e4567dd54fffc4d4a4c54c2ad7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

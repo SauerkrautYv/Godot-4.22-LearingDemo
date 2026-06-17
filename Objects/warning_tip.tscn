@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci38mg6pgvr84"]
+
+[ext_resource type="Texture2D" uid="uid://bchmpfd44n2wa" path="res://assets/state/warning_tip.png" id="1_6afea"]
+[ext_resource type="Script" path="res://Objects/warning_tip.gd" id="1_cnqg5"]
+
+[node name="warningTip" type="Area2D"]
+script = ExtResource("1_cnqg5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 100
+texture = ExtResource("1_6afea")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
